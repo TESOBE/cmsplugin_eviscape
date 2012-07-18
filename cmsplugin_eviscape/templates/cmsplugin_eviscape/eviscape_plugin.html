@@ -1,0 +1,10 @@
+{% if title %}
+    <h3 class="title">{{ title }}</h3>
+{% endif %}
+{% for item in evis %}
+  <div class="entry">
+    <div class="date">{{item.evis.evi_insert_date}}</div>
+    <h6><a target="_blank" href="{{item.ref}}">{{item.evis.evi_subject|striptags}}</a></h6>
+    {{item.evis.evi_body|striptags|truncatewords:20}}
+  </div>
+{% endfor %}
