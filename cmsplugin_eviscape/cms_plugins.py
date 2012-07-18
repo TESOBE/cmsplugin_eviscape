@@ -7,7 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class EviscapePlugin(CMSPluginBase):
     model = EviscapeInstance
-    name = _("Eviscape Plugin")
+    name = _("Eviscape")
     render_template = "cmsplugin_eviscape/eviscape_plugin.html"
 
     def render(self, context, instance, placeholder):
