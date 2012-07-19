@@ -13,8 +13,7 @@ def get_sent_evis(server, nod_id, limit, evis_type):
         socket_file_obj = urllib2.urlopen(json_url)
     # for the case we cannot get access to eviscape data
     except urllib2.URLError, e:
-        print e
-        print 'ERROR in get_sent_evis'
+        print 'ERROR in get_sent_evis: {0}'.format(e)
         return []
 
     data = socket_file_obj.read()
@@ -23,5 +22,4 @@ def get_sent_evis(server, nod_id, limit, evis_type):
     data = json.loads(data)
 
     sent_evis = [e for e in data['objects'] if e['evis']['typ_value'] == evis_type]
-    print sent_evis
     return sent_evis
