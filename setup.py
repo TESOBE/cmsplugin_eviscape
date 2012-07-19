@@ -11,7 +11,7 @@ install_requires = [
 setup(
     name = "cmsplugin_eviscape",
     version = version,
-    url = '',
+    url = 'https://github.com/TESOBE/cmsplugin_eviscape',
     license = 'BSD',
     platforms=['OS Independent'],
     description = "An Eviscape extension for Django CMS",
