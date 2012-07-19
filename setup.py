@@ -14,7 +14,7 @@ setup(
     url = '',
     license = 'BSD',
     platforms=['OS Independent'],
-    description = "An evsicape extension for Django CMS",
+    description = "An Eviscape extension for Django CMS",
     author = "Tim Kleinschmidt",
     author_email = 'tim@tesobe.com',
     packages=find_packages(),
