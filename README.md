@@ -1,4 +1,4 @@
-Installation
+*Installation*
 
     pip install cmsplugin_eviscape
 
