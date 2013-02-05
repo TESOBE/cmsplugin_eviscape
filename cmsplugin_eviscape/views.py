@@ -21,5 +21,9 @@ def get_sent_evis(server, nod_id, limit, evis_type):
     data = data.strip('()')
     data = json.loads(data)
 
-    sent_evis = [e for e in data['objects'] if e['evis']['typ_value'] == evis_type]
+    # Check if a evis_type is set and filter the results for it
+    if evis_type:
+        sent_evis = [e for e in data['objects'] if e['evis']['typ_value'] == evis_type]
+    else:
+        sent_evis = [e for e in data['objects']]
     return sent_evis
