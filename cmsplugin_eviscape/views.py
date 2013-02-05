@@ -1,6 +1,10 @@
 import urllib2
 import json
 
+from datetime import datetime
+
+EVISCAPE_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
+
 
 def get_sent_evis(server, nod_id, limit, evis_type):
     """(Currently) returns a list of dictionaries with keys evis, ref and id.
@@ -27,4 +31,11 @@ def get_sent_evis(server, nod_id, limit, evis_type):
         sent_evis = [e for e in data['objects'] if e['evis']['typ_value'] == evis_type]
     else:
         sent_evis = [e for e in data['objects']]
+    for e in sent_evis:
+        e['evis']['evi_insert_date'] = convert_str_to_date(e['evis']['evi_insert_date'])
     return sent_evis
+
+
+def convert_str_to_date(value):
+    date = datetime.strptime(value, EVISCAPE_TIME_FORMAT)
+    return date
