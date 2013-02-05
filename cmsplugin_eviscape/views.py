@@ -6,7 +6,8 @@ def get_sent_evis(server, nod_id, limit, evis_type):
     """(Currently) returns a list of dictionaries with keys evis, ref and id.
     Returns an empty list in case it could not fetch the data from eviscape."""
 
-    json_url = "http://%s/api/1.0/rest/?method=evis.sent&format=json&jsoncallback=?&nod_id=%s&per_page=%s" % (server, nod_id, limit)
+    json_url = "http://{0}/api/1.0/rest/?method=evis.sent&format=json" \
+        "&jsoncallback=?&nod_id={1}&per_page={2}".format(server, nod_id, limit)
 
     # quick and dirty
     try:
