@@ -2,12 +2,6 @@ from setuptools import setup, find_packages
 
 version = __import__('cmsplugin_eviscape').__version__
 
-install_requires = [
-    'setuptools',
-    'django',
-    'django-cms',
-]
-
 setup(
     name = "cmsplugin_eviscape",
     version = version,
@@ -18,7 +12,6 @@ setup(
     author = "Tim Kleinschmidt, Tobias Pfeiffer",
     author_email = 'tim@tesobe.com, tobias@tesobe.com',
     packages=find_packages(),
-    install_requires = install_requires,
     include_package_data=True,
     zip_safe=False,
     classifiers = [
@@ -34,4 +27,8 @@ setup(
     package_dir={
         'cmsplugin_eviscape': 'cmsplugin_eviscape',
     },
+    install_requires = [
+            "Django >= 1.3",
+            "django-cms >= 2.2",
+    ]
 )
